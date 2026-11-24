@@ -1,0 +1,84 @@
+2026-11-22 01:55:37,604 | INFO     | ===== INICIO DEL SISTEMA SOFTWARE FJ =====
+2026-11-22 01:55:37,604 | INFO     | INICIO simulación 1: Registrar cliente válido (Ana)
+2026-11-22 01:55:37,604 | INFO     | Cliente registrado: Cliente Ana Martínez (doc: 1012345678, correo: ana@correo.com, tel: 3001234567)
+2026-11-22 01:55:37,604 | INFO     | Simulación 1 terminó sin errores
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 1
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 2: Registrar cliente válido (Luis)
+2026-11-22 01:55:37,605 | INFO     | Cliente registrado: Cliente Luis Gómez (doc: 52987654, correo: luis@correo.com, tel: 3109876543)
+2026-11-22 01:55:37,605 | INFO     | Simulación 2 terminó sin errores
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 2
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 3: Cliente con correo inválido
+2026-11-22 01:55:37,605 | ERROR    | Simulación 3 - ClienteInvalidoError: El correo 'pedrocorreo.com' no tiene un formato válido
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 3
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 4: Cliente con datos faltantes
+2026-11-22 01:55:37,605 | ERROR    | Simulación 4 - ClienteInvalidoError: El nombre es obligatorio
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 4
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 5: Cliente con documento duplicado
+2026-11-22 01:55:37,605 | ERROR    | Simulación 5 - OperacionNoPermitidaError: Ya existe un cliente con el documento 1012345678
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 5
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 6: Crear tres servicios válidos
+2026-11-22 01:55:37,605 | INFO     | Servicio registrado: Sala 'Sala Innovación' para 12 personas, $50,000 por hora
+2026-11-22 01:55:37,605 | INFO     | Servicio registrado: Alquiler de portátil 'Portátil Gamer', $20,000 por hora + $50,000 de depósito
+2026-11-22 01:55:37,605 | INFO     | Servicio registrado: Asesoría 'Asesoría en Python' con Dra. Rojas (nivel senior), $80,000 por hora
+2026-11-22 01:55:37,605 | INFO     | Simulación 6 terminó sin errores
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 6
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 7: Servicio con precio negativo
+2026-11-22 01:55:37,605 | ERROR    | Simulación 7 - ServicioInvalidoError: El precio por hora debe ser mayor que cero
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 7
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 8: Asesoría con nivel inválido
+2026-11-22 01:55:37,605 | ERROR    | Simulación 8 - ServicioInvalidoError: El nivel 'experto' no es válido (use 'junior' o 'senior')
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 8
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 9: Reserva de sala exitosa (IVA + descuento)
+2026-11-22 01:55:37,605 | INFO     | Reserva creada: Reserva 1 | Ana Martínez | Sala Innovación | 3 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,605 | INFO     | Reserva 1 confirmada (Ana Martínez - Sala Innovación)
+2026-11-22 01:55:37,605 | INFO     | Reserva 1 procesada, costo final: $160,650.00
+2026-11-22 01:55:37,605 | INFO     | Fin del intento de procesar la reserva 1
+2026-11-22 01:55:37,605 | INFO     | Simulación 9 terminó sin errores
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 9
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 10: Reserva con horas inválidas (encadenamiento)
+2026-11-22 01:55:37,605 | ERROR    | Simulación 10 - ReservaInvalidaError: No se pudo crear la reserva: La duración de 'Sala Innovación' debe estar entre 1 y 8 horas (se pidió 20)
+2026-11-22 01:55:37,605 | ERROR    | Simulación 10 - causa: ServicioInvalidoError: La duración de 'Sala Innovación' debe estar entre 1 y 8 horas (se pidió 20)
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 10
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 11: Reserva con cliente inexistente
+2026-11-22 01:55:37,605 | ERROR    | Simulación 11 - ClienteInvalidoError: No existe un cliente con el documento 99999999
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 11
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 12: Reserva de servicio no disponible
+2026-11-22 01:55:37,605 | INFO     | Reserva creada: Reserva 2 | Luis Gómez | Portátil Gamer | 5 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,605 | ERROR    | Simulación 12 - ServicioNoDisponibleError: El servicio 'Portátil Gamer' no está disponible
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 12
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 13: Cancelar y luego confirmar una reserva
+2026-11-22 01:55:37,605 | INFO     | Reserva creada: Reserva 3 | Luis Gómez | Sala Innovación | 2 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,605 | INFO     | Reserva 3 cancelada
+2026-11-22 01:55:37,605 | ERROR    | Simulación 13 - OperacionNoPermitidaError: La reserva 3 está 'cancelada' y no se puede confirmar
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 13
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 14: Cálculo inconsistente (descuento de 150%)
+2026-11-22 01:55:37,605 | INFO     | Reserva creada: Reserva 4 | Ana Martínez | Asesoría en Python | 2 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,605 | INFO     | Reserva 4 confirmada (Ana Martínez - Asesoría en Python)
+2026-11-22 01:55:37,605 | INFO     | Fin del intento de procesar la reserva 4
+2026-11-22 01:55:37,605 | ERROR    | Simulación 14 - ReservaInvalidaError: No se pudo procesar la reserva 4
+2026-11-22 01:55:37,605 | ERROR    | Simulación 14 - causa: CalculoInconsistenteError: El descuento 1.5 debe estar entre 0 y 1
+2026-11-22 01:55:37,605 | INFO     | FIN simulación 14
+2026-11-22 01:55:37,605 | INFO     | INICIO simulación 15: Impuesto escrito como texto
+2026-11-22 01:55:37,605 | INFO     | Reserva creada: Reserva 5 | Luis Gómez | Asesoría en Python | 1 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,605 | INFO     | Reserva 5 confirmada (Luis Gómez - Asesoría en Python)
+2026-11-22 01:55:37,606 | INFO     | Fin del intento de procesar la reserva 5
+2026-11-22 01:55:37,606 | ERROR    | Simulación 15 - ReservaInvalidaError: No se pudo procesar la reserva 5
+2026-11-22 01:55:37,606 | ERROR    | Simulación 15 - causa: CalculoInconsistenteError: El impuesto y el descuento deben ser números
+2026-11-22 01:55:37,606 | ERROR    | Simulación 15 - causa: TypeError: '<' not supported between instances of 'str' and 'int'
+2026-11-22 01:55:37,606 | INFO     | FIN simulación 15
+2026-11-22 01:55:37,606 | INFO     | INICIO simulación 16: Reserva de asesoría exitosa (sin impuestos)
+2026-11-22 01:55:37,606 | INFO     | Reserva creada: Reserva 6 | Luis Gómez | Asesoría en Python | 2 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,606 | INFO     | Reserva 6 confirmada (Luis Gómez - Asesoría en Python)
+2026-11-22 01:55:37,606 | INFO     | Reserva 6 procesada, costo final: $192,000.00
+2026-11-22 01:55:37,606 | INFO     | Fin del intento de procesar la reserva 6
+2026-11-22 01:55:37,606 | INFO     | Simulación 16 terminó sin errores
+2026-11-22 01:55:37,606 | INFO     | FIN simulación 16
+2026-11-22 01:55:37,606 | INFO     | INICIO simulación 17: Reserva de equipo exitosa (solo IVA)
+2026-11-22 01:55:37,606 | INFO     | Reserva creada: Reserva 7 | Ana Martínez | Portátil Gamer | 4 h | estado: pendiente | costo: sin calcular
+2026-11-22 01:55:37,606 | INFO     | Reserva 7 confirmada (Ana Martínez - Portátil Gamer)
+2026-11-22 01:55:37,606 | INFO     | Reserva 7 procesada, costo final: $154,700.00
+2026-11-22 01:55:37,606 | INFO     | Fin del intento de procesar la reserva 7
+2026-11-22 01:55:37,606 | INFO     | Simulación 17 terminó sin errores
+2026-11-22 01:55:37,606 | INFO     | FIN simulación 17
+2026-11-22 01:55:37,606 | INFO     | RESUMEN: 2 clientes, 3 servicios, 7 reservas
+2026-11-22 01:55:37,606 | INFO     | ===== FIN DEL SISTEMA SOFTWARE FJ =====
