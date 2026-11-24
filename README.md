@@ -2,9 +2,9 @@
 
 Proyecto de la Fase 4 del curso **Programación (213023)** – UNAD.
 Sistema orientado a objetos en Python, **sin base de datos**: todo se maneja con objetos y listas,
-y se usa un archivo únicamente para el registro de eventos y errores (logs).
+y se usa un archivo únicamente (logs).
 
-## Cómo ejecutarlo
+## Ejecytar
 
 Requiere Python 3.8 o superior (no necesita instalar librerías).
 
@@ -12,7 +12,7 @@ Requiere Python 3.8 o superior (no necesita instalar librerías).
 python main.py
 ```
 
-Al ejecutarlo se corren 17 simulaciones (válidas e inválidas) y se genera el archivo `logs/software_fj.log`.
+Al ejecutarlo se corren 17 simulaciones y se genera el archivo `logs/software_fj.log`.
 
 ## Estructura del proyecto
 
@@ -47,7 +47,7 @@ Al ejecutarlo se corren 17 simulaciones (válidas e inválidas) y se genera el a
 | Alquiler de equipo | 1 a 24 horas | precio por hora × horas + depósito |
 | Asesoría | 1 a 4 horas | precio por hora × horas (+20 % si el especialista es senior) |
 
-## Simulaciones incluidas
+## Simulaciones 
 
 Clientes válidos e inválidos (correo mal escrito, datos faltantes, documento duplicado), servicios válidos e
 inválidos (precio negativo, nivel inexistente), reservas exitosas y fallidas (horas fuera de rango, cliente
